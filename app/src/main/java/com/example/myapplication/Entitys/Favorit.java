@@ -7,11 +7,17 @@ import androidx.room.PrimaryKey;
 
 import javax.annotation.Nonnull;
 
-@Entity(foreignKeys = {@ForeignKey(entity = User.class,
+@Entity(foreignKeys = {
+        @ForeignKey(entity = User.class,
         parentColumns = "userId",
         childColumns = "userId",
-        onDelete = ForeignKey.CASCADE)}
-        ,tableName = "Favorit")
+        onDelete = ForeignKey.CASCADE)},
+        //@ForeignKey(entity = Hofautomat.class,
+          //      parentColumns = "hofautomatId",
+            //    childColumns = "hofautomatId",
+              //  onDelete = ForeignKey.CASCADE)},
+
+        tableName = "Favorit")
 public class Favorit {
 
     @PrimaryKey(autoGenerate = true)
