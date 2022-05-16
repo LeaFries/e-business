@@ -11,12 +11,12 @@ import javax.annotation.Nonnull;
         parentColumns = "userId",
         childColumns = "userId",
         onDelete = ForeignKey.CASCADE)}
-        ,tableName = "Attachment")
-public class Attachment {
+        ,tableName = "UserBilder")
+public class UserBilder {
 
     @PrimaryKey(autoGenerate = true)
     @Nonnull
-    @ColumnInfo(name = "attachmentId")
+    @ColumnInfo(name = "UserBilderId")
     private int id;
 
     @ColumnInfo(name = "userId")
@@ -26,7 +26,7 @@ public class Attachment {
     private String label;
 
 
-    public Attachment(){}
+    public UserBilder(){}
 
     public int getId() {
         return id;
