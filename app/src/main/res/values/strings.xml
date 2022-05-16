@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="homescreen_headline">Hofautomaten</string>
+    <string name="filter_headline">Filter</string>
+    <string name="favoriten_headline">Favoriten</string>
 </resources>
