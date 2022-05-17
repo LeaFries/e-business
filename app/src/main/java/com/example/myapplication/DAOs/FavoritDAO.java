@@ -17,17 +17,17 @@ public interface FavoritDAO {
     List<Favorit> getAll();
 
     @Insert
-    void insertFavorit(Favorit adresse);
+    void insertFavorit(Favorit favorit);
 
     @Delete
-    void deleteFavorit(Favorit adresse);
+    void deleteFavorit(Favorit favorit);
 
     @Update
-    void updateFavorit(Favorit adresse);
+    void updateFavorit(Favorit favorit);
 
     @Query("SELECT * FROM Favorit WHERE favoritId = :favoritId")
-    List<Favorit> findFavorit(int favoritId);
+    List<Favorit> findFavoritById(int favoritId);
 
-
-
+    @Query("SELECT * FROM Favorit WHERE userId = :userId")
+    List<Favorit> findFavoritForUserByUserId(int userId);
 }

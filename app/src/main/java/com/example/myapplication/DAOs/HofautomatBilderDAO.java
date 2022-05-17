@@ -16,16 +16,16 @@ public interface HofautomatBilderDAO
         List<HofautomatBilder> getAll();
 
         @Insert
-        void insertHofautomatBilder(HofautomatBilder hofautomat);
+        void insertHofautomatBilder(HofautomatBilder hofautomatbilder);
 
         @Delete
-        void deleteHofautomatBilder(HofautomatBilder hofautomat);
+        void deleteHofautomatBilder(HofautomatBilder hofautomatbilder);
 
         @Update
-        void updateHofautomatBilder(HofautomatBilder hofautomat);
+        void updateHofautomatBilder(HofautomatBilder hofautomatbilder);
 
         @Query("SELECT * FROM HofautomatBilder WHERE hofautomatBilderId = :hofautomatBilderId")
-        List<HofautomatBilder> findHofautomatBilder(int hofautomatBilderId);
+        List<HofautomatBilder> findHofautomatBilderById(int hofautomatBilderId);
 
         @Query("SELECT * FROM HofautomatBilder WHERE hofautomatId = :hofautomatId")
         List<HofautomatBilder> findHofautomatBilderByHofautomatId(int hofautomatId);

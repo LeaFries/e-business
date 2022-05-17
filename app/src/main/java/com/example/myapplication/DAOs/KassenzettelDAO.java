@@ -14,13 +14,13 @@ public interface KassenzettelDAO {
     List<Kassenzettel> getAll();
 
     @Insert
-    void insertKassenzettel(Kassenzettel produkt);
+    void insertKassenzettel(Kassenzettel kassenzettel);
 
     @Delete
-    void deleteKassenzettel(Kassenzettel produkt);
+    void deleteKassenzettel(Kassenzettel kassenzettel);
 
     @Update
-    void updateKazzenzettel(Kassenzettel produkt);
+    void updateKazzenzettel(Kassenzettel kassenzettel);
 
     @Query("SELECT * FROM Kassenzettel WHERE kassenzettelId = :kassenzettelId")
     List<Kassenzettel> findKassenzettelById(int kassenzettelId);

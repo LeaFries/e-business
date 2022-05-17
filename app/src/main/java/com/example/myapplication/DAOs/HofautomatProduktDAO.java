@@ -17,14 +17,14 @@ public interface HofautomatProduktDAO {
     List<HofautomatProdukt> getAll();
 
     @Insert
-    void insertProdukt(HofautomatProdukt hofautomatProdukt);
+    void insertHofautomatProdukt(HofautomatProdukt hofautomatProdukt);
 
     @Delete
-    void deleteProdukt(HofautomatProdukt hofautomatProdukt);
+    void deleteHofautomatProdukt(HofautomatProdukt hofautomatProdukt);
 
     @Update
-    void updateProdukt(HofautomatProdukt hofautomatProdukt);
+    void updateHofautomatProdukt(HofautomatProdukt hofautomatProdukt);
 
     @Query("SELECT * FROM HofautomatProdukt WHERE hofautomatProduktId = :hofautomatProduktId")
-    List<HofautomatProdukt> findHofautomatProdukte(int hofautomatProduktId);
+    List<HofautomatProdukt> findHofautomatProdukteById(int hofautomatProduktId);
 }
