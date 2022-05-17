@@ -9,10 +9,10 @@ import java.util.Date;
 
 import javax.annotation.Nonnull;
 
-@Entity(/*foreignKeys = {@ForeignKey(entity = Hofautomat.class,
+@Entity(foreignKeys = {@ForeignKey(entity = Hofautomat.class,
         parentColumns = "hofautomatId",
         childColumns = "hofautomatId",
-        onDelete = ForeignKey.CASCADE)},*/
+        onDelete = ForeignKey.CASCADE)},
         tableName = "HofautomatBilder")
 public class HofautomatBilder {
 
@@ -26,6 +26,9 @@ public class HofautomatBilder {
 
     @ColumnInfo(name = "label")
     private String label;
+
+    @ColumnInfo(name = "hofautomatId")
+    private String hofautomatId;
 
 
     public HofautomatBilder(){}
@@ -54,4 +57,11 @@ public class HofautomatBilder {
         this.label = label;
     }
 
+    public String getHofautomatId() {
+        return hofautomatId;
+    }
+
+    public void setHofautomatId(String hofautomatId) {
+        this.hofautomatId = hofautomatId;
+    }
 }

@@ -9,8 +9,6 @@ import androidx.room.Update;
 import java.util.List;
 
 import com.example.myapplication.Entitys.Favorit;
-import com.example.myapplication.Entitys.Hofautomat;
-import com.example.myapplication.Entitys.User;
 
 @Dao
 public interface FavoritDAO {
@@ -27,10 +25,9 @@ public interface FavoritDAO {
     @Update
     void updateFavorit(Favorit adresse);
 
-    @Query("SELECT * FROM Favorit WHERE hofautomatId = :hofautomatId")
-    List<Hofautomat> findFavoritHofautomat(int hofautomatId);
+    @Query("SELECT * FROM Favorit WHERE favoritId = :favoritId")
+    List<Favorit> findFavorit(int favoritId);
 
-    @Query("SELECT * FROM Favorit WHERE userId = :userId")
-    List<User> findFavoritUser(int userId);
+
 
 }

@@ -6,7 +6,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.myapplication.Entitys.HofautomatBilder;
-import com.example.myapplication.Entitys.Hofautomat;
+
 
 import java.util.List;
 
@@ -24,6 +24,9 @@ public interface HofautomatBilderDAO
         @Update
         void updateHofautomatBilder(HofautomatBilder hofautomat);
 
-        @Query("SELECT * FROM Hofautomat WHERE hofautomatId = :hofautomatId")
-        List<HofautomatBilder> findHofautomatBilder(int hofautomatId);
+        @Query("SELECT * FROM HofautomatBilder WHERE hofautomatBilderId = :hofautomatBilderId")
+        List<HofautomatBilder> findHofautomatBilder(int hofautomatBilderId);
+
+        @Query("SELECT * FROM HofautomatBilder WHERE hofautomatId = :hofautomatId")
+        List<HofautomatBilder> findHofautomatBilderByHofautomatId(int hofautomatId);
 }

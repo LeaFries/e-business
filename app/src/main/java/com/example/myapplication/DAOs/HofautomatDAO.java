@@ -26,5 +26,8 @@ public interface HofautomatDAO {
     void updateHofautomat(Hofautomat hofautomat);
 
     @Query("SELECT * FROM Hofautomat WHERE name = :name")
-    List<Hofautomat> findHofautomat(String name);
+    List<Hofautomat> findHofautomatByName(String name);
+
+    @Query("SELECT * FROM Hofautomat WHERE hofautomatId = :hofautomatId")
+    List<Hofautomat> findHofautomatById(int hofautomatId);
 }
