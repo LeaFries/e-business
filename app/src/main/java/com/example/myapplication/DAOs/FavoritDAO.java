@@ -19,13 +19,13 @@ public interface FavoritDAO {
     List<Favorit> getAll();
 
     @Insert
-    void insertAdresse(Favorit adresse);
+    void insertFavorit(Favorit adresse);
 
     @Delete
-    void deleteAdresse(Favorit adresse);
+    void deleteFavorit(Favorit adresse);
 
     @Update
-    void updateAdresse(Favorit adresse);
+    void updateFavorit(Favorit adresse);
 
     @Query("SELECT * FROM Favorit WHERE hofautomatId = :hofautomatId")
     List<Hofautomat> findFavoritHofautomat(int hofautomatId);
