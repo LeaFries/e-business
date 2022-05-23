@@ -9,11 +9,7 @@ import java.lang.annotation.Target;
 
 import javax.annotation.Nonnull;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Kassenzettel.class,
-        parentColumns = "kassenzettelId",
-        childColumns = "kassenzettelId",
-        onDelete = ForeignKey.CASCADE)}
-        ,tableName = "User")
+@Entity(tableName = "User")
 
 public class User {
 
