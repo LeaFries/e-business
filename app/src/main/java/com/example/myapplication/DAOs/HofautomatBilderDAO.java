@@ -1,5 +1,6 @@
 package com.example.myapplication.DAOs;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -10,6 +11,7 @@ import com.example.myapplication.Entitys.HofautomatBilder;
 
 import java.util.List;
 
+@Dao
 public interface HofautomatBilderDAO
 {
         @Query("SELECT * FROM HofautomatBilder")

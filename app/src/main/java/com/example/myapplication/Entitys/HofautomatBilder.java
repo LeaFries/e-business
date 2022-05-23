@@ -22,7 +22,7 @@ public class HofautomatBilder {
     private int id;
 
     @ColumnInfo(name = "Datum")
-    private Date datum;
+    private String datum;
 
     @ColumnInfo(name = "label")
     private String label;
@@ -41,11 +41,11 @@ public class HofautomatBilder {
         this.id = id;
     }
 
-    public Date getDatum() {
+    public String getDatum() {
         return datum;
     }
 
-    public void setDatum(Date datum) {
+    public void setDatum(String datum) {
         this.datum = datum;
     }
 

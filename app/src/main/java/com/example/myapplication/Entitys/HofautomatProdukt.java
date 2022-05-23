@@ -7,10 +7,10 @@ import androidx.room.PrimaryKey;
 
 import javax.annotation.Nonnull;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Produkt.class, parentColumns = "id",
+@Entity(foreignKeys = {@ForeignKey(entity = Produkt.class, parentColumns = "produktId",
         childColumns = "produktId",
         onDelete = ForeignKey.CASCADE),
-        @ForeignKey(entity = Hofautomat.class, parentColumns = "id",
+        @ForeignKey(entity = Hofautomat.class, parentColumns = "hofautomatId",
                 childColumns = "hofautomatId",
                 onDelete = ForeignKey.CASCADE)},
         tableName = "HofautomatProdukt")
