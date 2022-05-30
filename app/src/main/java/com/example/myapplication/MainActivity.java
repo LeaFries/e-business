@@ -2,21 +2,15 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.room.Room;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.myapplication.DAOs.UserDOA;
-import com.example.myapplication.Entitys.Adresse;
 import com.example.myapplication.Entitys.Produkt;
-import com.example.myapplication.Entitys.User;
 
-import java.io.Console;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     URoomDatabase db;

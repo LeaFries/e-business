@@ -29,4 +29,6 @@ public interface KassenzettelDAO {
 
     @Query("SELECT * FROM Kassenzettel WHERE userID = :userId")
     List<Kassenzettel> findKassenzettelByUserId(int userId);
+
+
 }
