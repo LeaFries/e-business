@@ -29,4 +29,7 @@ public interface ProduktDAO {
 
     @Query("SELECT * FROM Produkt WHERE produktId = :produktId")
     List<Produkt> findProductById(int produktId);
+
+    @Query("SELECT * FROM Produkt ORDER BY produktId DESC LIMIT 1")
+    Produkt getLastProdukt();
 }

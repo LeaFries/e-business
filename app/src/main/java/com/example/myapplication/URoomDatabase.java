@@ -25,7 +25,7 @@ import com.example.myapplication.Entitys.UserBilder;
 
 @Database(entities = {Produkt.class, Hofautomat.class, Adresse.class, Favorit.class,
         HofautomatBilder.class, Kassenzettel.class, HofautomatProdukt.class, User.class, UserBilder.class}, version = 1, exportSchema = false)
-abstract class RoomDatabase extends androidx.room.RoomDatabase {
+abstract class URoomDatabase extends androidx.room.RoomDatabase {
 
     public abstract ProduktDAO produktDAO();
     public abstract HofautomatDAO hofautomatDAO();
@@ -37,15 +37,15 @@ abstract class RoomDatabase extends androidx.room.RoomDatabase {
     public abstract UserDOA userDOA();
     public abstract UserBilderDAO userBilderDAO();
 
-    private static RoomDatabase INSTANCE;
+    private static URoomDatabase INSTANCE;
 
-    static RoomDatabase getDatabase(final Context context) {
+    static URoomDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
-            synchronized (RoomDatabase.class) {
+            synchronized (URoomDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE =
                             Room.databaseBuilder(context.getApplicationContext(),
-                                    RoomDatabase.class,
+                                    URoomDatabase.class,
                                     "e-business-db").build();
                 }
             }
