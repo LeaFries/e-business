@@ -36,8 +36,6 @@ public class User {
     @ColumnInfo(name = "punkte")
     private int punkte;
 
-    @ColumnInfo(name = "kassenzettelId")
-    private int kassenzettelId;
 
     public User() {}
 
@@ -97,12 +95,5 @@ public class User {
         this.punkte = punkte;
     }
 
-    public int getKassenzettelId() {
-        return kassenzettelId;
-    }
-
-    public void setKassenzettelId(int kassenzettelId) {
-        this.kassenzettelId = kassenzettelId;
-    }
 }
 

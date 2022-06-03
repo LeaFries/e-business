@@ -15,7 +15,6 @@ import javax.annotation.Nonnull;
 public class Kassenzettel {
 
     @PrimaryKey(autoGenerate = true)
-    @Nonnull
     @ColumnInfo(name = "kassenzettelId")
     private int id;
 
