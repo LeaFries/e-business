@@ -2,8 +2,25 @@
     <string name="homescreen_headline">Hofautomaten</string>
     <string name="filter_headline">Filter</string>
     <string name="favoriten_headline">Favoriten</string>
+  
     <string name = "textPersonName">Name Hofautomat</string>
-
     <string name="Hofbauer">Name Hofbauer</string>
     <string name="Adresse"> Adresse </string>
+
+    <string name="entfernung">Entfernung</string>
+    <string name="plz_stadt">PLZ, Stadt</string>
+    <string name="entfernung_slider">Entfernung-Slider</string>
+
+    <string name="produkte">Produkte</string>
+    <string name="milch">Milch</string>
+    <string name="eier">Eier</string>
+    <string name="wurst">Wurst</string>
+    <string name="kartoffeln">Kartoffeln</string>
+    <string name="honig">Honig</string>
+    <string name="oel">Öl</string>
+    <string name="essig">Essig</string>
+    <string name="zwiebeln">Zwiebeln</string>
+    <string name="aepfel">Äpfel</string>
+
+    <string name="suche">Suche</string>
 </resources>
