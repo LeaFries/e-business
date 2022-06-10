@@ -25,5 +25,11 @@ public interface ProduktDAO {
     void updateProdukt(Produkt produkt);
 
     @Query("SELECT * FROM Produkt WHERE name = :name")
-    List<Produkt> findProduct(String name);
+    List<Produkt> findProductByName(String name);
+
+    @Query("SELECT * FROM Produkt WHERE produktId = :produktId")
+    List<Produkt> findProductById(int produktId);
+
+    @Query("SELECT * FROM Produkt ORDER BY produktId DESC LIMIT 1")
+    Produkt getLastProdukt();
 }
