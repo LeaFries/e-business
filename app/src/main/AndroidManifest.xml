@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/homescreen_headline"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".MainActivity"
+            android:name=".FavoritenActivity"
+            android:exported="false"
+            android:label="@string/favoriten_headline"/>
+        <activity
+            android:name=".FilterActivity"
+            android:exported="false"
+            android:label="@string/filter_headline"
+            android:parentActivityName=".HomescreenActivity" />
+        <activity
+            android:name=".HomescreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
