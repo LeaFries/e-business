@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.myapplication.Entitys.Hofautomat;
@@ -30,4 +31,10 @@ public interface HofautomatDAO {
 
     @Query("SELECT * FROM Hofautomat WHERE hofautomatId = :hofautomatId")
     List<Hofautomat> findHofautomatById(int hofautomatId);
+
+    @Query("Select name from Hofautomat")
+    List<String> getHofautomatNames();
+
+    @Query("SELECT * FROM Hofautomat ORDER BY hofautomatId DESC LIMIT 1")
+    Hofautomat getLastHofautomat();
 }
