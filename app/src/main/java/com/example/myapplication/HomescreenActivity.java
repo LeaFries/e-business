@@ -17,7 +17,7 @@ import com.example.myapplication.Entitys.Produkt;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomescreenActivity  extends AppCompatActivity {
+public class HomescreenActivity  extends AppCompatActivity implements View.OnClickListener {
     URoomDatabase db;
     private AppCompatButton loadButton;
     private TextView nameTextView;
@@ -31,13 +31,13 @@ public class HomescreenActivity  extends AppCompatActivity {
         loadButton = findViewById(R.id.load_b);
         nameTextView = findViewById(R.id.textView10);
 
-        //loadButton.setOnClickListener(this);
+        loadButton.setOnClickListener(this);
 
         db = URoomDatabase.getDatabase(this);
 
     }
 
-
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
 
