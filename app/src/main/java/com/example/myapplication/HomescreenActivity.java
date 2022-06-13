@@ -32,6 +32,8 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Homescreen wird mit der ListView geladen
         setContentView(R.layout.activity_homescreen);
 
         loadButton = findViewById(R.id.load_b);
@@ -128,13 +130,13 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                                 TextView adressView = (TextView)itemView.findViewById(R.id.adresse);
 
                                 // Set background color by row number.
-                                int colorPos = itemIndex % 2;
+                                /* int colorPos = itemIndex % 2;
                                 if(colorPos==0) {
                                     itemView.setBackgroundColor(Color.YELLOW);
                                 }else
                                 {
                                     itemView.setBackgroundColor(Color.GREEN);
-                                }
+                                }*/
                                 // Set resources.
                                 //imageView.setImageResource(R.mipmap.ic_launcher);
 
@@ -174,6 +176,12 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
     /** Called when the user taps the Filter button */
     public void openFilter(View view) {
         Intent intent = new Intent(this, FilterActivity.class);
+        startActivity(intent);
+    }
+
+    /** Called when the user taps the Map button */
+    public void openMap(View view) {
+        Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
 

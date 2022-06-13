@@ -9,9 +9,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".MapActivity"
+            android:exported="false"
+            android:label="@string/map_headline"
+            android:parentActivityName=".HomescreenActivity" />
+        <activity
             android:name=".FavoritenActivity"
             android:exported="false"
-            android:label="@string/favoriten_headline"/>
+            android:label="@string/favoriten_headline" />
         <activity
             android:name=".FilterActivity"
             android:exported="false"

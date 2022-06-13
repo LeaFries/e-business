@@ -2,8 +2,9 @@
     <string name="homescreen_headline">Hofautomaten</string>
     <string name="filter_headline">Filter</string>
     <string name="favoriten_headline">Favoriten</string>
-  
-    <string name = "textPersonName">Name Hofautomat</string>
+    <string name="map_headline">Map</string>
+
+    <string name="textPersonName">Name Hofautomat</string>
     <string name="Hofbauer">Name Hofbauer</string>
     <string name="Adresse"> Adresse </string>
 
