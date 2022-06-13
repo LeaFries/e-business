@@ -27,5 +27,5 @@ public interface AdresseDAO {
     void updateAdresse(Adresse adresse);
 
     @Query("SELECT * FROM Adresse WHERE adresseId = :adresseId")
-    List<Adresse> findAdresse(int adresseId);
+    Adresse findAdresse(int adresseId);
 }

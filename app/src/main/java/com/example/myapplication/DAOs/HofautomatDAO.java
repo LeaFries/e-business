@@ -37,4 +37,7 @@ public interface HofautomatDAO {
 
     @Query("SELECT * FROM Hofautomat ORDER BY hofautomatId DESC LIMIT 1")
     Hofautomat getLastHofautomat();
+
+    @Query("Select adresseId from Hofautomat where name = :name")
+    int getAdresseIdByName(String name);
 }

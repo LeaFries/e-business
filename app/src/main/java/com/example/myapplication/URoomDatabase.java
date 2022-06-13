@@ -46,7 +46,7 @@ abstract class URoomDatabase extends androidx.room.RoomDatabase {
                     INSTANCE =
                             Room.databaseBuilder(context.getApplicationContext(),
                                     URoomDatabase.class,
-                                    "e-business-db").build();
+                                    "e-business-db").allowMainThreadQueries().build();
                 }
             }
         }
