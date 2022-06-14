@@ -127,14 +127,6 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                                 TextView nameView = (TextView)itemView.findViewById(R.id.name);
                                 TextView adressView = (TextView)itemView.findViewById(R.id.adresse);
 
-                                // Set background color by row number.
-                                int colorPos = itemIndex % 2;
-                                if(colorPos==0) {
-                                    itemView.setBackgroundColor(Color.YELLOW);
-                                }else
-                                {
-                                    itemView.setBackgroundColor(Color.GREEN);
-                                }
                                 // Set resources.
                                 //imageView.setImageResource(R.mipmap.ic_launcher);
 
@@ -157,14 +149,6 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                         };
 
                         listView.setAdapter(customBaseAdapter);
-
-
-
-
-                       /* final StableArrayAdapter arrayAdapter = new StableArrayAdapter(getApplicationContext(),
-                                android.R.layout.simple_list_item_1,
-                                list);
-                        listView.setAdapter(arrayAdapter);*/
                     }
                 });
             }
