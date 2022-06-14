@@ -36,7 +36,7 @@ public class FavoritenActivity extends AppCompatActivity { URoomDatabase db;
 
         db = URoomDatabase.getDatabase(this);
 
-        final ListView listView = (ListView) findViewById(R.id.listview);
+        final ListView listView = (ListView) findViewById(R.id.listViewFavoriten);
 
         final List<Integer> hofautomatIds = db.favoritDAO().findFavoritForUserByUserId(1);
         ArrayList<Hofautomat> alleAutomaten = new ArrayList<>();
