@@ -21,22 +21,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <SearchView
         android:id="@+id/standortValue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:drawableStart="@drawable/search"
         android:drawablePadding="4dp"
         android:ems="10"
-        android:hint="@string/plz_stadt"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entfernungText" />
+        app:layout_constraintTop_toBottomOf="@+id/entfernungText"
+        android:iconifiedByDefault="false"
+        android:queryHint="PLZ oder Stadt"/>
 
     <com.google.android.material.slider.RangeSlider
         android:id="@+id/entfernungSlider"
@@ -102,7 +102,8 @@
                 android:layout_height="48dp"
                 android:layout_margin="6dp"
                 android:text="@string/milch"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:onClick="onCheckboxClicked"/>
 
             <CheckBox
                 android:id="@+id/eierCheckBox"
@@ -196,6 +197,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <ListView
+        android:id="@+id/listViewGefiltert"
+        android:layout_width="409dp"
+        android:layout_height="209dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

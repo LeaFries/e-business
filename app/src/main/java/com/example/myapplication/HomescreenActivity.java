@@ -62,18 +62,8 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                //Test: zuletzt gespeicherten Hofautomaten aus Datenbank holen
-                //final Hofautomat hofautomat = db.hofautomatDAO().getLastHofautomat();
-                //final List<String> automaten = db.hofautomatDAO().getHofautomatNames();
                 //Alle Hofautomaten in Liste speichern
                 final List<Hofautomat> alleAutomaten = db.hofautomatDAO().getAll();
-
-                //Lade den Namen in die TextView
-                /**  runOnUiThread(new Runnable() {
-                @Override public void run() {
-                nameTextView.setText(hofautomat.getName());
-                }
-                });*/
 
                 //Lade die Namen der Hofautomaten
                 runOnUiThread(new Runnable() {
