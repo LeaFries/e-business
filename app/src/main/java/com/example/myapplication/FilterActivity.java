@@ -23,14 +23,6 @@ public class FilterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
 
-        TextView entfernungValue = findViewById(R.id.entfernungValue);
-
-        RangeSlider entfernungSlider = findViewById(R.id.entfernungSlider);
-        entfernungSlider.addOnChangeListener((slider, value, fromUser) -> {
-            int intValue = (int) Math.round(value);
-            entfernungValue.setText(Integer.valueOf(intValue) + " km");
-                }
-        );
     }
 
     /** Called when the user taps the Suche button */
@@ -38,6 +30,21 @@ public class FilterActivity extends AppCompatActivity {
         Intent intent = new Intent(this, HomescreenActivity.class);
         startActivity(intent);
     }
+    public void bierFilteredTapped(View view) {
+    }
 
+    public void milchFilteredTapped(View view) {
+    }
 
+    public void eierFilteredTapped(View view) {
+    }
+
+    public void kartoffelFilteredTapped(View view) {
+    }
+
+    public void wurstFilteredTapped(View view) {
+    }
+
+    public void brotFilteredTapped(View view) {
+    }
 }

@@ -1,201 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".FilterActivity">
 
-    <TextView
-        android:id="@+id/entfernungText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/entfernung"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/standortValue"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:drawableStart="@drawable/search"
-        android:drawablePadding="4dp"
-        android:ems="10"
-        android:hint="@string/plz_stadt"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entfernungText" />
-
-    <com.google.android.material.slider.RangeSlider
-        android:id="@+id/entfernungSlider"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="@string/entfernung_slider"
-        android:stepSize="1"
-        android:valueFrom="1"
-        android:valueTo="100"
-        app:labelBehavior="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/standortValue" />
-
-    <TextView
-        android:id="@+id/entfernungValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1 km"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entfernungSlider" />
-
-    <TextView
-        android:id="@+id/produkteText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/produkte"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entfernungValue" />
-
-    <TableLayout
-        android:id="@+id/tableLayout"
+    <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/rectangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/produkteText">
+        android:id="@+id/standortValue"
+        android:iconifiedByDefault="false"
+        android:queryHint=""></SearchView>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <CheckBox
-                android:id="@+id/milchCheckBox"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/milch"
-                android:textSize="18sp" />
-
-            <CheckBox
-                android:id="@+id/eierCheckBox"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/eier"
-                android:textSize="18sp" />
-
-            <CheckBox
-                android:id="@+id/wurstCheckBox"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/wurst"
-                android:textSize="18sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <CheckBox
-                android:id="@+id/kartoffelnCheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/kartoffeln"
-                android:textSize="18sp" />
-
-            <CheckBox
-                android:id="@+id/honigCheckBox"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/honig"
-                android:textSize="18sp" />
-
-            <CheckBox
-                android:id="@+id/oelCheckBox"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/oel"
-                android:textSize="18sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <CheckBox
-                android:id="@+id/essigCheckBox"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/essig"
-                android:textSize="18sp" />
-
-            <CheckBox
-                android:id="@+id/zwiebelnCheckBox"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/zwiebeln"
-                android:textSize="18sp" />
-
-            <CheckBox
-                android:id="@+id/aepfelCheckBox"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="6dp"
-                android:text="@string/aepfel"
-                android:textSize="18sp" />
-        </TableRow>
-
-    </TableLayout>
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:onClick="tapsOnFilter"
-        android:text="@string/suche"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        android:orientation="horizontal">
 
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Brot"
+            android:id="@+id/brotFilter"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="brotFilteredTapped">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Wurst"
+            android:id="@+id/wurstFilter"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="wurstFilteredTapped">
+
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Kartoffeln"
+            android:id="@+id/kartoffelFilter"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="kartoffelFilteredTapped">
+
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Eier"
+            android:id="@+id/eierFilter"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="eierFilteredTapped">
+
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Milch"
+            android:id="@+id/milchFilter"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="milchFilteredTapped">
+
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Bier"
+            android:id="@+id/bierFilter"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="bierFilteredTapped">
+
+        </Button>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
