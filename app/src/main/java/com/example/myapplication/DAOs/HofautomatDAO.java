@@ -43,4 +43,5 @@ public interface HofautomatDAO {
 
     @Query("Select * from Hofautomat where adresseId = :adressId")
     Hofautomat getHofautomatByAdressId(int adressId);
+
 }

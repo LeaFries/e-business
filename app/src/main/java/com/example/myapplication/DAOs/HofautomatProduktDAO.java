@@ -25,6 +25,6 @@ public interface HofautomatProduktDAO {
     @Update
     void updateHofautomatProdukt(HofautomatProdukt hofautomatProdukt);
 
-    @Query("SELECT * FROM HofautomatProdukt WHERE hofautomatProduktId = :hofautomatProduktId")
-    List<HofautomatProdukt> findHofautomatProdukteById(int hofautomatProduktId);
+    @Query("SELECT hofautomatId FROM HofautomatProdukt WHERE produktId = :produktId")
+    Integer findHofautomatByProduktId(int produktId);
 }

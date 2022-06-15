@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.example.myapplication.Entitys.Adresse;
 import com.example.myapplication.Entitys.Hofautomat;
 import com.example.myapplication.Entitys.Produkt;
+import com.example.myapplication.Helper.AutomatAdapter;
 import com.example.myapplication.Helper.ProduktAdapter;
 import com.google.android.material.slider.RangeSlider;
 
@@ -34,6 +35,8 @@ public class FilterActivity extends AppCompatActivity
 {
     URoomDatabase db;
     public static ArrayList<Produkt> alleProdukte = new ArrayList<Produkt>();
+    public static ArrayList<Integer> hofAutomatenId = new ArrayList<Integer>();
+    public static ArrayList<Hofautomat> filteredHofautomaten = new ArrayList<Hofautomat>();
     private ListView listView;
 
 
@@ -87,8 +90,20 @@ public class FilterActivity extends AppCompatActivity
                                 gefilterteProdukte.add(produkt);
                             }
                         }
+                        for(Produkt produkt: gefilterteProdukte)
+                        {
+                        Integer automatId = db.hofautomatProduktDAO().findHofautomatByProduktId(produkt.getId());
+                        hofAutomatenId.add(automatId);
+                        }
 
-                        ProduktAdapter adapter = new ProduktAdapter(getApplicationContext(), 0, gefilterteProdukte);
+                        for(Integer integer : hofAutomatenId)
+                        {
+                            Hofautomat hofautomaten = db.hofautomatDAO().findHofautomatById(integer);
+                            filteredHofautomaten.add(hofautomaten);
+
+                        }
+
+                        AutomatAdapter adapter = new AutomatAdapter(getApplicationContext(), 0, filteredHofautomaten);
                         listView.setAdapter(adapter);
 
                         return false;
