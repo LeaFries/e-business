@@ -7,6 +7,8 @@
     android:onClick="openFavoriten"
     tools:context=".HomescreenActivity">
 
+
+
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
