@@ -28,10 +28,10 @@ public class Mockdata{
     public void insertUsers() {}
 
     @Query("INSERT INTO Adresse (userId, straße, plz, hausnummer, ort)" +
-            "VALUES (1, 'Lerchenweg', 76133, 4, 'Karlsruhe')," +
-            "       (2, 'Durlacher Str.', 76275, 36, 'Ettlingen')," +
-            "       (3, 'Herbstraße', 76275, 2, 'Ettlingen')," +
-            "       (4, 'Pforzheimer Str.', 75196, 30, 'Remchingen')")
+            "VALUES (1, 'Lerchenweg', '76133', 4, 'Karlsruhe')," +
+            "       (2, 'Durlacher Str.', '76275', 36, 'Ettlingen')," +
+            "       (3, 'Herbstraße', '76275', 2, 'Ettlingen')," +
+            "       (4, 'Pforzheimer Str.', '75196', 30, 'Remchingen')")
     public void insertAdresse() {}
 
     @Query("INSERT INTO Hofautomat (userId, adresseId, name)" +
