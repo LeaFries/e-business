@@ -17,7 +17,6 @@ public class Mockdata{
     @Query( "INSERT INTO Produkt (name, preis, beschreibung)" +
             "VALUES ('Eier', 5, 'Freilandhaltung Eier')," +
             "       ('Äpfel', 6.5,'Elstar Äpfel')")
-
     public void insertProdukte1() {}
 
     @Query("INSERT INTO User (hofautomatId, vorname, nachname, email, rolle, punkte)" +
@@ -59,5 +58,14 @@ public class Mockdata{
             "VALUES (1, 1)," +
             "       (1, 3) ")
     public void insertFavoriten(){}
+
+    @Query( "INSERT INTO Produkt (name, preis, beschreibung)" +
+            "VALUES ('Brot', 2.5, 'Selbstgemachtes Dinkelbrot')," +
+            "       ('Eier', 5,'Bodenhaltung Eier')," +
+            "       ('Kartoffeln', 3.5,'Festkochende Kartoffeln')," +
+            "       ('Wurst', 3,'10er Pack Grillwurst')," +
+            "       ('Wurst', 2.5,'Fleischwurst')," +
+            "       ('Milch')")
+    public void insertProdukte2(){}
 }
 

@@ -8,20 +8,17 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/produktName"
         android:gravity="center_vertical"
-        android:text="produktName"
-
         android:textSize="20dp"
         android:layout_marginLeft="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/produktBeschreibung"
         android:gravity="center_vertical"
-        android:text="produktName"
 
         android:textSize="20dp"
         android:layout_marginLeft="20dp"/>

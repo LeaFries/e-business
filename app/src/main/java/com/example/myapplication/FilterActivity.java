@@ -86,6 +86,7 @@ public class FilterActivity extends AppCompatActivity
                         ArrayList<Integer> hofAutomatenId = new ArrayList<Integer>();
                         ArrayList<Hofautomat> filteredHofautomaten = new ArrayList<Hofautomat>();
                         ArrayList<Produkt> gefilterteProdukte = new ArrayList<Produkt>();
+                        List<Integer> automatenIds = null;
 
                         for (Produkt produkt : alleProdukte) {
                             if (produkt.getName().toLowerCase().contains(s)) {
@@ -94,13 +95,16 @@ public class FilterActivity extends AppCompatActivity
                         }
                         for(Produkt produkt: gefilterteProdukte)
                         {
-                        Integer automatId = db.hofautomatProduktDAO().findHofautomatByProduktId(produkt.getId());
-                        hofAutomatenId.add(automatId);
+                        automatenIds = db.hofautomatProduktDAO().findHofautomatByProduktId(produkt.getId());
+                        }
+                        for(int i = 0; i < automatenIds.size(); ++i){
+                            hofAutomatenId.add(automatenIds.get(i));
                         }
 
                         for(Integer integer : hofAutomatenId)
                         {
                             Hofautomat hofautomaten = db.hofautomatDAO().findHofautomatById(integer);
+
                             filteredHofautomaten.add(hofautomaten);
                         }
                         AutomatAdapter adapter = new AutomatAdapter(getApplicationContext(), 0, filteredHofautomaten);
