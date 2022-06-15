@@ -41,6 +41,7 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
 
         db = URoomDatabase.getDatabase(this);
 
+
     }
 
     @Override
@@ -48,6 +49,7 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
         switch (view.getId()) {
 
             case R.id.load_b:
+
                 onLoadButtonPressed();
                 break;
 
@@ -62,6 +64,7 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
+
                 //Alle Hofautomaten in Liste speichern
                 final List<Hofautomat> alleAutomaten = db.hofautomatDAO().getAll();
 

@@ -12,7 +12,7 @@
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/standortValue"
+        android:id="@+id/hofautomatFilterView"
         android:iconifiedByDefault="false"
         android:queryHint=""></SearchView>
 
