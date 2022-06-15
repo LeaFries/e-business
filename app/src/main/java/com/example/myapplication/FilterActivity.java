@@ -35,8 +35,7 @@ public class FilterActivity extends AppCompatActivity
 {
     URoomDatabase db;
     public static ArrayList<Produkt> alleProdukte = new ArrayList<Produkt>();
-    public static ArrayList<Integer> hofAutomatenId = new ArrayList<Integer>();
-    public static ArrayList<Hofautomat> filteredHofautomaten = new ArrayList<Hofautomat>();
+
     private ListView listView;
 
 
@@ -84,7 +83,10 @@ public class FilterActivity extends AppCompatActivity
 
                     @Override
                     public boolean onQueryTextChange(String s) {
+                        ArrayList<Integer> hofAutomatenId = new ArrayList<Integer>();
+                        ArrayList<Hofautomat> filteredHofautomaten = new ArrayList<Hofautomat>();
                         ArrayList<Produkt> gefilterteProdukte = new ArrayList<Produkt>();
+
                         for (Produkt produkt : alleProdukte) {
                             if (produkt.getName().toLowerCase().contains(s)) {
                                 gefilterteProdukte.add(produkt);
@@ -100,9 +102,7 @@ public class FilterActivity extends AppCompatActivity
                         {
                             Hofautomat hofautomaten = db.hofautomatDAO().findHofautomatById(integer);
                             filteredHofautomaten.add(hofautomaten);
-
                         }
-
                         AutomatAdapter adapter = new AutomatAdapter(getApplicationContext(), 0, filteredHofautomaten);
                         listView.setAdapter(adapter);
 
