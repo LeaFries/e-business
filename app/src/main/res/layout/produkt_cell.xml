@@ -3,7 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:background="color/colorAccent">
+
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,7 +12,7 @@
         android:id="@+id/produktName"
         android:gravity="center_vertical"
         android:text="produktName"
-        android:textColor="color/colorPrimaryDark"
+
         android:textSize="20dp"
         android:layout_marginLeft="20dp"/>
 
@@ -21,7 +22,7 @@
         android:id="@+id/produktBeschreibung"
         android:gravity="center_vertical"
         android:text="produktName"
-        android:textColor="color/colorPrimaryDark"
+
         android:textSize="20dp"
         android:layout_marginLeft="20dp"/>
 

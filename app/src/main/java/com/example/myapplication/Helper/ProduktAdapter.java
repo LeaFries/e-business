@@ -28,13 +28,14 @@ public class ProduktAdapter extends ArrayAdapter<Produkt>
         Produkt produkt = getItem(position);
 
         if(convertView == null){
-            LayoutInflater.from(getContext()).inflate(R.layout.produkt_cell, parent, false);
-        }
-        TextView tv = (TextView) convertView.findViewById(R.id.produktName);
-        TextView tv2 = (TextView) convertView.findViewById(R.id.produktBeschreibung);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.produkt_cell, parent, false);
+            TextView tv = (TextView) convertView.findViewById(R.id.produktName);
+            TextView tv2 = (TextView) convertView.findViewById(R.id.produktBeschreibung);
 
-        tv.setText(produkt.getName());
-        tv2.setText(produkt.getBeschreibung());
+            tv.setText(produkt.getName());
+            tv2.setText(produkt.getBeschreibung());
+        }
+
 
         return convertView;
     }

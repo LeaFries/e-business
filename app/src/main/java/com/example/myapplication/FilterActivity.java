@@ -51,39 +51,50 @@ public class FilterActivity extends AppCompatActivity
 
 
     private void setUpData() {
-        final List<Hofautomat> alleAutomaten = db.hofautomatDAO().getAll();
-        final List<Adresse> alleAdressen = db.adresseDAO().getAll();
-        final List<Produkt> produkte = db.produktDAO().getAll();
-        for (Produkt produkt : produkte) {
-            alleProdukte.add(produkt);
-        }
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                final List<Hofautomat> alleAutomaten = db.hofautomatDAO().getAll();
+                final List<Adresse> alleAdressen = db.adresseDAO().getAll();
+                final List<Produkt> produkte = db.produktDAO().getAll();
+                for (Produkt produkt : produkte) {
+                    alleProdukte.add(produkt);
+                }
+            }
+        });
 
     }
 
     private void initSearchWidgets() {
-
-        SearchView searchView = (SearchView) findViewById(R.id.hofautomatFilterView);
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-
+        listView = (ListView) findViewById(R.id.listViewGefiltert);
+        AsyncTask.execute(new Runnable() {
             @Override
-            public boolean onQueryTextChange(String s) {
-                ArrayList<Produkt> gefilterteProdukte = new ArrayList<Produkt>();
-                for (Produkt produkt : alleProdukte) {
-                    if (produkt.getName().toLowerCase().contains(s)) {
-                        gefilterteProdukte.add(produkt);
+            public void run() {
+                SearchView searchView = (SearchView) findViewById(R.id.hofautomatFilterView);
+
+                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+                    public boolean onQueryTextSubmit(String s) {
+                        return false;
                     }
-                }
 
-                ProduktAdapter adapter = new ProduktAdapter(getApplicationContext(), 0, gefilterteProdukte);
-                listView.setAdapter(adapter);
 
-                return false;
+                    @Override
+                    public boolean onQueryTextChange(String s) {
+                        ArrayList<Produkt> gefilterteProdukte = new ArrayList<Produkt>();
+                        for (Produkt produkt : alleProdukte) {
+                            if (produkt.getName().toLowerCase().contains(s)) {
+                                gefilterteProdukte.add(produkt);
+                            }
+                        }
+
+                        ProduktAdapter adapter = new ProduktAdapter(getApplicationContext(), 0, gefilterteProdukte);
+                        listView.setAdapter(adapter);
+
+                        return false;
+                    }
+                });
+
             }
         });
 
