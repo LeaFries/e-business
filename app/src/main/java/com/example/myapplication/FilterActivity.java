@@ -97,7 +97,7 @@ public class FilterActivity extends AppCompatActivity
                         {
                         automatenIds = db.hofautomatProduktDAO().findHofautomatByProduktId(produkt.getId());
                         }
-                        for(int i = 0; i < automatenIds.size(); ++i){
+                        for(int i = 0; i < automatenIds.size(); i++){
                             hofAutomatenId.add(automatenIds.get(i));
                         }
 
