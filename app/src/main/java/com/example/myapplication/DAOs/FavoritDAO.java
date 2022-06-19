@@ -30,4 +30,7 @@ public interface FavoritDAO {
 
     @Query("SELECT hofautomatId FROM Favorit WHERE userId = :userId")
     List<Integer> findFavoritForUserByUserId(int userId);
+
+    @Query("Delete from Favorit where hofautomatId = :hofautomatId")
+    void deleteFavoritByHofautomatId(int hofautomatId);
 }

@@ -135,8 +135,7 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                                 itemButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        //ToDo: Abfragen, ob es Favoriten bereits gibt
-                                        //funktioniert noch nicht
+                                        //Favorit wird nur hinzugefügt, wenn es noch keinen mit deer HofautomatId gibt
                                         if(alleFavoriten.contains(id)){
                                             Toast.makeText(HomescreenActivity.this, "Diesen Hofautomaten haben Sie bereits als Favorit", Toast.LENGTH_SHORT).show();
                                         } else {
@@ -145,19 +144,6 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                                             db.favoritDAO().insertFavorit(favorit);
                                             Toast.makeText(HomescreenActivity.this, "Sie haben " + name + " zu Ihren Favoriten hinzugefügt ", Toast.LENGTH_SHORT).show();
                                         }
-                                        /*for (int i = 0; i < alleFavoriten.size(); i++) {
-                                            if (alleFavoriten.get(i).equals(id)) {
-                                                Toast.makeText(HomescreenActivity.this, "Diesen Hofautomaten haben Sie bereits als Favorit", Toast.LENGTH_SHORT).show();
-                                                break;
-                                            }
-                                        }
-                                                favorit.setUserId(1);
-                                                favorit.setHofautomatId(id);
-                                                db.favoritDAO().insertFavorit(favorit);
-                                                Toast.makeText(HomescreenActivity.this, "Sie haben " + name + " zu Ihren Favoriten hinzugefügt ", Toast.LENGTH_SHORT).show();
-                                        */
-
-
                                     }
                                 });
 

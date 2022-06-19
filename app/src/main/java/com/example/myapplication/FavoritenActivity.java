@@ -11,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.Entitys.Adresse;
 import com.example.myapplication.Entitys.Favorit;
@@ -49,8 +51,10 @@ public class FavoritenActivity extends AppCompatActivity { URoomDatabase db;
 
         final ArrayList<String> listNamen = new ArrayList<String>();
         final ArrayList<String> listAdressen = new ArrayList<>();
+        final ArrayList<Integer> listIds = new ArrayList<>();
 
         for(int i = 0; i < alleAutomaten.size(); ++i){
+            listIds.add(alleAutomaten.get(i).getId());
             listNamen.add(alleAutomaten.get(i).getName());
             Adresse adresse = db.adresseDAO().findAdresse(alleAutomaten.get(i).getAdresseId());
             listAdressen.add(adresse.getStraße() + " " + adresse.getHausnummer() + ", " + adresse.getPlz() + " " + adresse.getOrt());
@@ -100,17 +104,21 @@ public class FavoritenActivity extends AppCompatActivity { URoomDatabase db;
 
                 final String name = listNamen.get(itemIndex);
                 final String adresse = listAdressen.get(itemIndex);
+                final int id = listIds.get(itemIndex);
                 nameView.setText(name);
                 adressView.setText(adresse);
 
                 // Find the button in list view row.
-                               /* Button itemButton = (Button)itemView.findViewById(R.id.baseUserButton);
-                                itemButton.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        Toast.makeText(ListViewActivity.this, "You click " + title + " , " + desc, Toast.LENGTH_SHORT).show();
-                                    }
-                                });*/
+                Button itemButton = (Button)itemView.findViewById(R.id.buttonFav);
+                itemButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        db.favoritDAO().deleteFavoritByHofautomatId(id);
+                        Toast.makeText(FavoritenActivity.this, "Sie haben " + name + " von Ihren Favoriten entfernt ", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
                 return itemView;
             }
         };
