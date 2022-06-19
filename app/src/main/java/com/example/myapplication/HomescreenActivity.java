@@ -64,6 +64,7 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
 
                 //Alle Hofautomaten in Liste speichern
                 final List<Hofautomat> alleAutomaten = db.hofautomatDAO().getAll();
+                final List<Integer> alleFavoriten = db.favoritDAO().findFavoritForUserByUserId(1);
                 final Favorit favorit = new Favorit();
 
                 //Lade die Namen der Hofautomaten
@@ -135,10 +136,28 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                                     @Override
                                     public void onClick(View view) {
                                         //ToDo: Abfragen, ob es Favoriten bereits gibt
-                                        favorit.setUserId(1);
-                                        favorit.setHofautomatId(id);
-                                        db.favoritDAO().insertFavorit(favorit);
-                                        Toast.makeText(HomescreenActivity.this, "Sie haben " + name + " zu Ihren Favoriten hinzugefügt " , Toast.LENGTH_SHORT).show();
+                                        //funktioniert noch nicht
+                                        if(alleFavoriten.contains(id)){
+                                            Toast.makeText(HomescreenActivity.this, "Diesen Hofautomaten haben Sie bereits als Favorit", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            favorit.setUserId(1);
+                                            favorit.setHofautomatId(id);
+                                            db.favoritDAO().insertFavorit(favorit);
+                                            Toast.makeText(HomescreenActivity.this, "Sie haben " + name + " zu Ihren Favoriten hinzugefügt ", Toast.LENGTH_SHORT).show();
+                                        }
+                                        /*for (int i = 0; i < alleFavoriten.size(); i++) {
+                                            if (alleFavoriten.get(i).equals(id)) {
+                                                Toast.makeText(HomescreenActivity.this, "Diesen Hofautomaten haben Sie bereits als Favorit", Toast.LENGTH_SHORT).show();
+                                                break;
+                                            }
+                                        }
+                                                favorit.setUserId(1);
+                                                favorit.setHofautomatId(id);
+                                                db.favoritDAO().insertFavorit(favorit);
+                                                Toast.makeText(HomescreenActivity.this, "Sie haben " + name + " zu Ihren Favoriten hinzugefügt ", Toast.LENGTH_SHORT).show();
+                                        */
+
+
                                     }
                                 });
 

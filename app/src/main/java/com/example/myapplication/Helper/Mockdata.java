@@ -55,8 +55,7 @@ public class Mockdata{
     public void insertHofautomatProdukt() {}
 
     @Query("INSERT INTO Favorit (userId, hofautomatId)" +
-            "VALUES (1, 1)," +
-            "       (1, 3) ")
+            "VALUES (1, 1)")
     public void insertFavoriten(){}
 
     @Query( "INSERT INTO Produkt (name, preis, beschreibung)" +
