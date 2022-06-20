@@ -29,7 +29,19 @@ import java.util.List;
 import java.util.Map;
 
 public class HomescreenActivity  extends AppCompatActivity {
-  
+    URoomDatabase db;
+    private AppCompatButton loadButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_homescreen);
+
+
+        db = URoomDatabase.getDatabase(this);
+    }
+
+
     /** Called when the user taps the Filter button */
     public void openFilter(View view) {
         Intent intent = new Intent(this, FilterActivity.class);
