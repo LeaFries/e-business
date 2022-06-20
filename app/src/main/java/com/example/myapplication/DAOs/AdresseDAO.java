@@ -14,6 +14,9 @@ import com.example.myapplication.Entitys.Produkt;
 @Dao
 public interface AdresseDAO {
 
+    @Query("DELETE FROM Adresse")
+    void deleteAll();
+
     @Query("SELECT * FROM Adresse")
     List<Adresse> getAll();
 

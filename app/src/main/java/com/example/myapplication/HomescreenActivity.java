@@ -13,10 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.Entitys.Adresse;
+import com.example.myapplication.Entitys.Favorit;
 import com.example.myapplication.Entitys.Hofautomat;
 import com.example.myapplication.Entitys.Produkt;
 
@@ -40,19 +43,15 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
         loadButton.setOnClickListener(this);
 
         db = URoomDatabase.getDatabase(this);
-
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-
             case R.id.load_b:
                 onLoadButtonPressed();
                 break;
-
         }
-
     }
 
 
@@ -62,18 +61,11 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                //Test: zuletzt gespeicherten Hofautomaten aus Datenbank holen
-                //final Hofautomat hofautomat = db.hofautomatDAO().getLastHofautomat();
-                //final List<String> automaten = db.hofautomatDAO().getHofautomatNames();
+
                 //Alle Hofautomaten in Liste speichern
                 final List<Hofautomat> alleAutomaten = db.hofautomatDAO().getAll();
-
-                //Lade den Namen in die TextView
-                /**  runOnUiThread(new Runnable() {
-                @Override public void run() {
-                nameTextView.setText(hofautomat.getName());
-                }
-                });*/
+                final List<Integer> alleFavoriten = db.favoritDAO().findFavoritForUserByUserId(1);
+                final Favorit favorit = new Favorit();
 
                 //Lade die Namen der Hofautomaten
                 runOnUiThread(new Runnable() {
@@ -81,8 +73,10 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                     public void run() {
                         final ArrayList<String> listNamen = new ArrayList<String>();
                         final ArrayList<String> listAdressen = new ArrayList<>();
+                        final ArrayList<Integer> listIds = new ArrayList<>();
 
                         for(int i = 0; i < alleAutomaten.size(); ++i){
+                            listIds.add(alleAutomaten.get(i).getId());
                             listNamen.add(alleAutomaten.get(i).getName());
                             Adresse adresse = db.adresseDAO().findAdresse(alleAutomaten.get(i).getAdresseId());
                             listAdressen.add(adresse.getStraße() + " " + adresse.getHausnummer() + ", " + adresse.getPlz() + " " + adresse.getOrt());
@@ -127,44 +121,37 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                                 TextView nameView = (TextView)itemView.findViewById(R.id.name);
                                 TextView adressView = (TextView)itemView.findViewById(R.id.adresse);
 
-                                // Set background color by row number.
-                                int colorPos = itemIndex % 2;
-                                if(colorPos==0) {
-                                    itemView.setBackgroundColor(Color.YELLOW);
-                                }else
-                                {
-                                    itemView.setBackgroundColor(Color.GREEN);
-                                }
                                 // Set resources.
                                 //imageView.setImageResource(R.mipmap.ic_launcher);
 
                                 final String name = listNamen.get(itemIndex);
                                 final String adresse = listAdressen.get(itemIndex);
+                                final int id = listIds.get(itemIndex);
                                 nameView.setText(name);
                                 adressView.setText(adresse);
 
                                 // Find the button in list view row.
-                               /* Button itemButton = (Button)itemView.findViewById(R.id.baseUserButton);
+                               Button itemButton = (Button)itemView.findViewById(R.id.buttonFav);
                                 itemButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        Toast.makeText(ListViewActivity.this, "You click " + title + " , " + desc, Toast.LENGTH_SHORT).show();
+                                        //Favorit wird nur hinzugefügt, wenn es noch keinen mit deer HofautomatId gibt
+                                        if(alleFavoriten.contains(id)){
+                                            Toast.makeText(HomescreenActivity.this, "Diesen Hofautomaten haben Sie bereits als Favorit", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            favorit.setUserId(1);
+                                            favorit.setHofautomatId(id);
+                                            db.favoritDAO().insertFavorit(favorit);
+                                            Toast.makeText(HomescreenActivity.this, "Sie haben " + name + " zu Ihren Favoriten hinzugefügt ", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
-                                });*/
+                                });
 
                                 return itemView;
                             }
                         };
 
                         listView.setAdapter(customBaseAdapter);
-
-
-
-
-                       /* final StableArrayAdapter arrayAdapter = new StableArrayAdapter(getApplicationContext(),
-                                android.R.layout.simple_list_item_1,
-                                list);
-                        listView.setAdapter(arrayAdapter);*/
                     }
                 });
             }

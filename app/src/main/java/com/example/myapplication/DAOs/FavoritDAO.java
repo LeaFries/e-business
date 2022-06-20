@@ -28,6 +28,9 @@ public interface FavoritDAO {
     @Query("SELECT * FROM Favorit WHERE favoritId = :favoritId")
     List<Favorit> findFavoritById(int favoritId);
 
-    @Query("SELECT * FROM Favorit WHERE userId = :userId")
-    List<Favorit> findFavoritForUserByUserId(int userId);
+    @Query("SELECT hofautomatId FROM Favorit WHERE userId = :userId")
+    List<Integer> findFavoritForUserByUserId(int userId);
+
+    @Query("Delete from Favorit where hofautomatId = :hofautomatId")
+    void deleteFavoritByHofautomatId(int hofautomatId);
 }
