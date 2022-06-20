@@ -17,19 +17,25 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     GoogleMap map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        SupportMapFragment mapFragment= (SupportMapFragment) getSupportFragmentManager()
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
+
         map.getUiSettings().setZoomControlsEnabled(true);
 
-        mapFragment.getMapAsync(this);
+
     }
 
-    @Override
+
+@Override
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
 
@@ -48,7 +54,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         map.moveCamera(CameraUpdateFactory.newLatLng(LeonhardtHofautomat));
 
 
-        map.animateCamera(CameraUpdateFactory.zoomTo((15)));
+        //map.animateCamera(CameraUpdateFactory.zoomTo((15)));
 
 
 
