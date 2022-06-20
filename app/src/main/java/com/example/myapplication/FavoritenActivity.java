@@ -114,7 +114,7 @@ public class FavoritenActivity extends AppCompatActivity { URoomDatabase db;
                     @Override
                     public void onClick(View view) {
                         db.favoritDAO().deleteFavoritByHofautomatId(id);
-                        Toast.makeText(FavoritenActivity.this, "Sie haben " + name + " von Ihren Favoriten entfernt ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FavoritenActivity.this, "Sie haben " + name + " aus Ihren Favoriten entfernt ", Toast.LENGTH_SHORT).show();
 
                     }
                 });

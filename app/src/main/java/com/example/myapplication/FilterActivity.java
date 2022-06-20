@@ -35,6 +35,7 @@ public class FilterActivity extends AppCompatActivity
 {
     URoomDatabase db;
     public static ArrayList<Produkt> alleProdukte = new ArrayList<Produkt>();
+    public static ArrayList<Adresse> alleAdressen = new ArrayList<>();
 
     private ListView listView;
 
@@ -47,8 +48,6 @@ public class FilterActivity extends AppCompatActivity
         db = URoomDatabase.getDatabase(this);
         setUpData();
         initSearchWidgets();
-
-
     }
 
 
@@ -57,10 +56,13 @@ public class FilterActivity extends AppCompatActivity
             @Override
             public void run() {
                 final List<Hofautomat> alleAutomaten = db.hofautomatDAO().getAll();
-                final List<Adresse> alleAdressen = db.adresseDAO().getAll();
+                final List<Adresse> adressen = db.adresseDAO().getAll();
                 final List<Produkt> produkte = db.produktDAO().getAll();
                 for (Produkt produkt : produkte) {
                     alleProdukte.add(produkt);
+                }
+                for(Adresse a: adressen){
+                    alleAdressen.add(a);
                 }
             }
         });
@@ -79,7 +81,6 @@ public class FilterActivity extends AppCompatActivity
                     public boolean onQueryTextSubmit(String s) {
                         return false;
                     }
-
 
                     @Override
                     public boolean onQueryTextChange(String s) {

@@ -33,6 +33,9 @@ public class Mockdata{
             "       (4, 'Pforzheimer Str.', '75196', 30, 'Remchingen')")
     public void insertAdresse() {}
 
+    @Query("Update Adresse set straße = 'Pforheim Str.' where adresseId = 4")
+    public void updateAdresse4(){}
+
     @Query("INSERT INTO Hofautomat (userId, adresseId, name)" +
             "VALUES (2, 2, 'Hedwighof')," +
             "       (3, 3,'Eier- und Geflügelhof'),"+
@@ -64,7 +67,22 @@ public class Mockdata{
             "       ('Kartoffeln', 3.5,'Festkochende Kartoffeln')," +
             "       ('Wurst', 3,'10er Pack Grillwurst')," +
             "       ('Wurst', 2.5,'Fleischwurst')," +
-            "       ('Milch')")
+            "       ('Milch', 2.5, 'Frische Milch')")
     public void insertProdukte2(){}
+
+    @Query("INSERT INTO HofautomatProdukt (produktId, hofautomatId)" +
+            "VALUES (4, 1)," +
+            "       (3, 3),"+
+            "       (5, 3),"+
+            "       (6, 3),"+
+            "       (8, 2),"+
+            "       (7, 3)")
+    public void insertHofautomatProdukt2() {}
+
+    @Query("INSERT INTO HofautomatProdukt (produktId, hofautomatId)" +
+            "VALUES (6, 2)," +
+            "       (7, 2),"+
+            "       (5, 1)")
+    public void insertHofautomatProdukt3() {}
 }
 
