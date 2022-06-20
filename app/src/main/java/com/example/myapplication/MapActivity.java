@@ -29,6 +29,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             mapFragment.getMapAsync(this);
         }
 
+        //map.getUiSettings().setZoomControlsEnabled(true);
 
 
     }
