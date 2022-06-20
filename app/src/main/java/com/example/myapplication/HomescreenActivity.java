@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HomescreenActivity  extends AppCompatActivity implements View.OnClickListener {
+public class HomescreenActivity  extends AppCompatActivity {
     URoomDatabase db;
     private AppCompatButton loadButton;
 
@@ -34,30 +34,13 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
 
-        loadButton = findViewById(R.id.load_b);
-
-
-        loadButton.setOnClickListener(this);
-
         db = URoomDatabase.getDatabase(this);
+        this.loadHofautomaten();
 
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-
-            case R.id.load_b:
-                onLoadButtonPressed();
-                break;
-
-        }
-
-    }
-
-
-    /** Button zum Laden der Hofautomaten */
-    public void onLoadButtonPressed() {
+    /** Laden der Hofautomaten */
+    public void loadHofautomaten() {
         final ListView listView = (ListView) findViewById(R.id.listview);
         AsyncTask.execute(new Runnable() {
             @Override
@@ -127,14 +110,6 @@ public class HomescreenActivity  extends AppCompatActivity implements View.OnCli
                                 TextView nameView = (TextView)itemView.findViewById(R.id.name);
                                 TextView adressView = (TextView)itemView.findViewById(R.id.adresse);
 
-                                // Set background color by row number.
-                                int colorPos = itemIndex % 2;
-                                if(colorPos==0) {
-                                    itemView.setBackgroundColor(Color.YELLOW);
-                                }else
-                                {
-                                    itemView.setBackgroundColor(Color.GREEN);
-                                }
                                 // Set resources.
                                 //imageView.setImageResource(R.mipmap.ic_launcher);
 
