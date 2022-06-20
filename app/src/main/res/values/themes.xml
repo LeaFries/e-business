@@ -15,7 +15,7 @@
         <!-- Customize your theme here. -->
     </style>
     <!-- Base application theme. -->
-    <style name="Theme.StartPage" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.StartPage" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
