@@ -29,7 +29,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             mapFragment.getMapAsync(this);
         }
 
-        map.getUiSettings().setZoomControlsEnabled(true);
 
 
     }
@@ -37,6 +36,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
 @Override
     public void onMapReady(GoogleMap googleMap) {
+
         map=googleMap;
 
 
@@ -54,7 +54,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         map.moveCamera(CameraUpdateFactory.newLatLng(LeonhardtHofautomat));
 
 
-        //map.animateCamera(CameraUpdateFactory.zoomTo((15)));
+
 
 
 
