@@ -8,97 +8,26 @@
     android:orientation="vertical"
     tools:context=".FilterActivity">
 
+    <TextView
+        android:id="@+id/produktTitel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Welches Produkt benötigen Sie?" />
 
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/hofautomatFilterView"
         android:iconifiedByDefault="false"
-        android:queryHint=""></SearchView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="Brot"
-            android:id="@+id/brotFilter"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="brotFilteredTapped">
-
-        </Button>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="Wurst"
-            android:id="@+id/wurstFilter"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="wurstFilteredTapped">
-
-        </Button>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="Kartoffeln"
-            android:id="@+id/kartoffelFilter"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="kartoffelFilteredTapped">
-
-        </Button>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="Eier"
-            android:id="@+id/eierFilter"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="eierFilteredTapped">
-
-        </Button>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="Milch"
-            android:id="@+id/milchFilter"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="milchFilteredTapped">
-
-        </Button>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="Bier"
-            android:id="@+id/bierFilter"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="bierFilteredTapped">
-
-        </Button>
-
-    </LinearLayout>
+        android:queryHint="" />
 
     <ListView
         android:id="@+id/listViewGefiltert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
