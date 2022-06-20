@@ -24,6 +24,16 @@
             android:label="@string/map_headline"
             android:parentActivityName=".HomescreenActivity" />
         <activity
+            android:name=".LoadingPageActivity"
+            android:theme="@style/Theme.StartPage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".FavoritenActivity"
             android:exported="false"
             android:label="@string/favoriten_headline" />
@@ -35,11 +45,6 @@
         <activity
             android:name=".HomescreenActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
