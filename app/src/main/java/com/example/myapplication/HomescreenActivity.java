@@ -13,10 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.Entitys.Adresse;
+import com.example.myapplication.Entitys.Favorit;
 import com.example.myapplication.Entitys.Hofautomat;
 import com.example.myapplication.Entitys.Produkt;
 
@@ -26,13 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 public class HomescreenActivity  extends AppCompatActivity {
-    
-
-
-
-
-
-
+  
     /** Called when the user taps the Filter button */
     public void openFilter(View view) {
         Intent intent = new Intent(this, FilterActivity.class);

@@ -30,7 +30,7 @@ public interface HofautomatDAO {
     List<Hofautomat> findHofautomatByName(String name);
 
     @Query("SELECT * FROM Hofautomat WHERE hofautomatId = :hofautomatId")
-    List<Hofautomat> findHofautomatById(int hofautomatId);
+    Hofautomat findHofautomatById(int hofautomatId);
 
     @Query("Select name from Hofautomat")
     List<String> getHofautomatNames();
@@ -40,4 +40,8 @@ public interface HofautomatDAO {
 
     @Query("Select adresseId from Hofautomat where name = :name")
     int getAdresseIdByName(String name);
+
+    @Query("Select * from Hofautomat where adresseId = :adressId")
+    Hofautomat getHofautomatByAdressId(int adressId);
+
 }

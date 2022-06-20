@@ -17,7 +17,6 @@ public class Mockdata{
     @Query( "INSERT INTO Produkt (name, preis, beschreibung)" +
             "VALUES ('Eier', 5, 'Freilandhaltung Eier')," +
             "       ('Äpfel', 6.5,'Elstar Äpfel')")
-
     public void insertProdukte1() {}
 
     @Query("INSERT INTO User (hofautomatId, vorname, nachname, email, rolle, punkte)" +
@@ -28,11 +27,14 @@ public class Mockdata{
     public void insertUsers() {}
 
     @Query("INSERT INTO Adresse (userId, straße, plz, hausnummer, ort)" +
-            "VALUES (1, 'Lerchenweg', 76133, 4, 'Karlsruhe')," +
-            "       (2, 'Durlacher Str.', 76275, 36, 'Ettlingen')," +
-            "       (3, 'Herbstraße', 76275, 2, 'Ettlingen')," +
-            "       (4, 'Pforzheimer Str.', 75196, 30, 'Remchingen')")
+            "VALUES (1, 'Lerchenweg', '76133', 4, 'Karlsruhe')," +
+            "       (2, 'Durlacher Str.', '76275', 36, 'Ettlingen')," +
+            "       (3, 'Herbstraße', '76275', 2, 'Ettlingen')," +
+            "       (4, 'Pforzheimer Str.', '75196', 30, 'Remchingen')")
     public void insertAdresse() {}
+
+    @Query("Update Adresse set straße = 'Pforheim Str.' where adresseId = 4")
+    public void updateAdresse4(){}
 
     @Query("INSERT INTO Hofautomat (userId, adresseId, name)" +
             "VALUES (2, 2, 'Hedwighof')," +
@@ -54,5 +56,33 @@ public class Mockdata{
             "       (2, 1),"+
             "       (1, 2)")
     public void insertHofautomatProdukt() {}
+
+    @Query("INSERT INTO Favorit (userId, hofautomatId)" +
+            "VALUES (1, 1)")
+    public void insertFavoriten(){}
+
+    @Query( "INSERT INTO Produkt (name, preis, beschreibung)" +
+            "VALUES ('Brot', 2.5, 'Selbstgemachtes Dinkelbrot')," +
+            "       ('Eier', 5,'Bodenhaltung Eier')," +
+            "       ('Kartoffeln', 3.5,'Festkochende Kartoffeln')," +
+            "       ('Wurst', 3,'10er Pack Grillwurst')," +
+            "       ('Wurst', 2.5,'Fleischwurst')," +
+            "       ('Milch', 2.5, 'Frische Milch')")
+    public void insertProdukte2(){}
+
+    @Query("INSERT INTO HofautomatProdukt (produktId, hofautomatId)" +
+            "VALUES (4, 1)," +
+            "       (3, 3),"+
+            "       (5, 3),"+
+            "       (6, 3),"+
+            "       (8, 2),"+
+            "       (7, 3)")
+    public void insertHofautomatProdukt2() {}
+
+    @Query("INSERT INTO HofautomatProdukt (produktId, hofautomatId)" +
+            "VALUES (6, 2)," +
+            "       (7, 2),"+
+            "       (5, 1)")
+    public void insertHofautomatProdukt3() {}
 }
 
