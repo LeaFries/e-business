@@ -22,7 +22,7 @@ public class Adresse {
     private String straße;
 
     @ColumnInfo(name = "plz")
-    private int plz;
+    private String plz;
 
     @ColumnInfo(name = "hausnummer")
     private int hausnummer;
@@ -56,11 +56,11 @@ public class Adresse {
         this.straße = straße;
     }
 
-    public int getPlz() {
+    public String getPlz() {
         return plz;
     }
 
-    public void setPlz(int plz) {
+    public void setPlz(String plz) {
         this.plz = plz;
     }
 

@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.myapplication.Entitys.HofautomatProdukt;
@@ -25,6 +26,6 @@ public interface HofautomatProduktDAO {
     @Update
     void updateHofautomatProdukt(HofautomatProdukt hofautomatProdukt);
 
-    @Query("SELECT * FROM HofautomatProdukt WHERE hofautomatProduktId = :hofautomatProduktId")
-    List<HofautomatProdukt> findHofautomatProdukteById(int hofautomatProduktId);
+    @Query("SELECT hofautomatId FROM HofautomatProdukt WHERE produktId = :produktId")
+    List<Integer> findHofautomatByProduktId(int produktId);
 }
