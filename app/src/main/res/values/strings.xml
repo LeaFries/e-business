@@ -24,4 +24,9 @@
     <string name="aepfel">Äpfel</string>
 
     <string name="suche">Suche</string>
+
+    <string name="filter">Filter</string>
+    <string name="favoriten">Favoriten</string>
+    <string name="home">Home</string>
+    <string name="map">Map</string>
 </resources>

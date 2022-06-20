@@ -24,6 +24,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
         SupportMapFragment mapFragment= (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        map.getUiSettings().setZoomControlsEnabled(true);
 
         mapFragment.getMapAsync(this);
     }
@@ -47,8 +48,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         map.moveCamera(CameraUpdateFactory.newLatLng(LeonhardtHofautomat));
 
 
-
-        //map.animateCamera(CameraUpdateFactory.zoomTo(7.0f));
+        map.animateCamera(CameraUpdateFactory.zoomTo((15)));
 
 
 
