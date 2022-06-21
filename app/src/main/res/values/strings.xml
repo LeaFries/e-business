@@ -34,4 +34,7 @@
     <string name="favoriten">Favoriten</string>
     <string name="home">Home</string>
     <string name="map">Map</string>
+
+    <string name="HofautomateninIhrerNähe">Hofautomaten in Ihrer Nähe</string>
+    <string name="Favoriten">Ihre Favoriten</string>
 </resources>
