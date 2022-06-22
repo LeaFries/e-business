@@ -9,10 +9,40 @@
 
 
     <ImageView
+        android:id="@+id/btn_herz3"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginBottom="233dp"
+        android:contentDescription="@string/favoriten"
+        android:gravity="center"
+        android:padding="18dp"
+        android:src="@drawable/ic_baseline_favorite_border_24"
+        app:layout_constraintBottom_toTopOf="@+id/btn_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_herz4"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginBottom="173dp"
+        android:contentDescription="@string/favoriten"
+        android:gravity="center"
+        android:padding="18dp"
+        android:src="@drawable/ic_baseline_favorite_border_24"
+        app:layout_constraintBottom_toTopOf="@+id/btn_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="12dp"
         android:background="@drawable/round_btn"
         android:contentDescription="@string/filter"
@@ -39,18 +69,30 @@
         app:layout_constraintStart_toEndOf="@+id/btn_search" />
 
 
+    <ImageView
+        android:id="@+id/btn_herz2"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginBottom="293dp"
+        android:contentDescription="@string/favoriten"
+        android:gravity="center"
+        android:padding="18dp"
+        android:src="@drawable/ic_baseline_favorite_border_24"
+        app:layout_constraintBottom_toTopOf="@+id/btn_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ListView
         android:id="@+id/listview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="290dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="210dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/btn_favorite"
@@ -125,6 +167,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/HofautomateninIhrerNähe"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_scanner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

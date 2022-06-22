@@ -55,7 +55,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         map.moveCamera(CameraUpdateFactory.newLatLng(LeonhardtHofautomat));
 
 
-
+float currentZoom = map.getCameraPosition().zoom;
 
 
 
