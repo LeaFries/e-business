@@ -16,7 +16,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:selectAllOnFocus="true"
-
+        android:textSize="22sp"
         android:text="@string/Hofautomaten"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -45,6 +45,7 @@
         android:background="@drawable/round_btn"
         android:onClick="tapStart"
         android:text="@string/start"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
