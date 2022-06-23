@@ -113,7 +113,7 @@ public class FilterActivity extends AppCompatActivity
                                 filteredHofautomaten.add(hofautomaten);
                             }
                         } else {
-                            Toast.makeText(FilterActivity.this, "Zu diesem Wort gibt es keinen Automaten ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FilterActivity.this, "Zu diesem Produkt gibt es keinen Automaten ", Toast.LENGTH_SHORT).show();
 
                         }
                         AutomatAdapter adapter = new AutomatAdapter(getApplicationContext(), 0, filteredHofautomaten);
