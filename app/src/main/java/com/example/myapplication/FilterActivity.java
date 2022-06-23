@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.Entitys.Adresse;
 import com.example.myapplication.Entitys.Hofautomat;
@@ -90,23 +91,30 @@ public class FilterActivity extends AppCompatActivity
                         List<Integer> automatenIds = null;
 
                         for (Produkt produkt : alleProdukte) {
-                            if (produkt.getName().toLowerCase().contains(s)) {
-                                gefilterteProdukte.add(produkt);
+                            try {
+                                if (produkt.getName().toLowerCase().contains(s.toLowerCase())) {
+                                    gefilterteProdukte.add(produkt);
+                                }
+                            } catch (Exception ex){
+                                ex.printStackTrace();
                             }
                         }
-                        for(Produkt produkt: gefilterteProdukte)
-                        {
-                        automatenIds = db.hofautomatProduktDAO().findHofautomatByProduktId(produkt.getId());
-                        }
-                        for(int i = 0; i < automatenIds.size(); i++){
-                            hofAutomatenId.add(automatenIds.get(i));
-                        }
+                        if(!gefilterteProdukte.isEmpty()) {
+                            for (Produkt produkt : gefilterteProdukte) {
+                                automatenIds = db.hofautomatProduktDAO().findHofautomatByProduktId(produkt.getId());
+                            }
+                            for (int i = 0; i < automatenIds.size(); i++) {
+                                hofAutomatenId.add(automatenIds.get(i));
+                            }
 
-                        for(Integer integer : hofAutomatenId)
-                        {
-                            Hofautomat hofautomaten = db.hofautomatDAO().findHofautomatById(integer);
+                            for (Integer integer : hofAutomatenId) {
+                                Hofautomat hofautomaten = db.hofautomatDAO().findHofautomatById(integer);
 
-                            filteredHofautomaten.add(hofautomaten);
+                                filteredHofautomaten.add(hofautomaten);
+                            }
+                        } else {
+                            Toast.makeText(FilterActivity.this, "Zu diesem Wort gibt es keinen Automaten ", Toast.LENGTH_SHORT).show();
+
                         }
                         AutomatAdapter adapter = new AutomatAdapter(getApplicationContext(), 0, filteredHofautomaten);
                         listView.setAdapter(adapter);
